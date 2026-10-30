@@ -1,0 +1,556 @@
+/* Registration page layout and account-type-specific form presentation. */
+body.page-register {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    overflow-x: hidden;
+    padding: 20px;
+    background:
+        linear-gradient(rgba(5, 37, 40, .62), rgba(5, 37, 40, .62)),
+        url("main-bg1.jpeg") center 48% / cover fixed no-repeat;
+    color: #17262a;
+    font-family: 'Inter', sans-serif;
+}
+
+body.page-register .register-shell {
+    display: grid;
+    width: min(100%, 964px);
+    min-height: min(730px, calc(100vh - 40px));
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.65fr);
+    overflow: hidden;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, .75);
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 22px 64px rgba(8, 41, 46, .22);
+}
+
+body.page-register .welcome-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 28px 25px;
+    background:
+        radial-gradient(circle at 100% 8%, transparent 0 110px, rgba(255, 255, 255, .08) 111px 112px, transparent 113px 150px, rgba(255, 255, 255, .06) 151px 152px, transparent 153px),
+        radial-gradient(circle at 0% 100%, transparent 0 72px, rgba(255, 255, 255, .08) 73px 74px, transparent 75px 108px, rgba(255, 255, 255, .06) 109px 110px, transparent 111px),
+        linear-gradient(150deg, #147f91 0%, #167987 54%, #279b7f 100%);
+    color: #fff;
+}
+
+body.page-register .welcome-panel .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+body.page-register .welcome-panel .logo > span:last-child {
+    color: #fff;
+}
+
+body.page-register .welcome-panel .logo > span:last-child > span {
+    color: #a7f0d7 !important;
+}
+
+body.page-register .welcome-copy {
+    margin: auto 0;
+    padding: 30px 0;
+}
+
+body.page-register .welcome-copy .eyebrow {
+    margin: 0 0 10px;
+    color: #b9f2d9;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+}
+
+body.page-register .welcome-copy h1 {
+    margin: 0 0 12px;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(32px, 3.2vw, 42px);
+    font-weight: 700;
+    line-height: 1.13;
+}
+
+body.page-register .welcome-copy > p:not(.eyebrow) {
+    margin: 0;
+    color: rgba(255, 255, 255, .86);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+body.page-register .benefits {
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+body.page-register .benefit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, .96);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+body.page-register .benefit i {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .12);
+    color: #d7fff1;
+    font-size: 15px;
+}
+
+body.page-register .form-panel {
+    min-width: 0;
+    padding: 27px 38px 23px;
+    background: #fff;
+}
+
+body.page-register .form-content {
+    width: min(100%, 590px);
+    margin: 0 auto;
+}
+
+body.page-register .form-heading {
+    position: relative;
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    color: #263a40;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+body.page-register .form-heading::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 42px;
+    height: 3px;
+    border-radius: 3px;
+    background: #198396;
+    content: "";
+}
+
+body.page-register .form-panel .form-label {
+    display: block;
+    margin: 0 0 5px;
+    color: #445a61;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+body.page-register .required-mark {
+    margin-left: 3px;
+    color: #d8505a;
+}
+
+body.page-register .account-select-wrap,
+body.page-register .input-wrap {
+    position: relative;
+}
+
+body.page-register .account-select-wrap .form-select {
+    min-height: 44px;
+    padding: 8px 38px 8px 13px;
+    border: 1px solid #dce7e9;
+    border-radius: 9px;
+    background-color: #fbfdfd;
+    color: #344b52;
+    font-size: 12px;
+    appearance: none;
+}
+
+body.page-register .account-select-wrap .form-select:focus {
+    border-color: #38b8c2;
+    box-shadow: 0 0 0 3px rgba(25, 131, 150, .13);
+}
+
+body.page-register .select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    color: #198396;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+body.page-register .account-hint {
+    display: flex;
+    min-height: 36px;
+    align-items: center;
+    gap: 7px;
+    margin: 10px 0 15px;
+    padding: 7px 10px;
+    border-left: 2px solid #35b997;
+    border-radius: 0 8px 8px 0;
+    background: #f1f8f7;
+    color: #71858a;
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+body.page-register .account-hint i {
+    flex: 0 0 auto;
+    color: #39aeb9;
+}
+
+body.page-register .field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 14px;
+}
+
+body.page-register .field-grid > div[hidden],
+body.page-register .student-id-field[hidden],
+body.page-register .field-error[hidden] {
+    display: none !important;
+}
+
+body.page-register .input-wrap {
+    display: flex;
+    min-width: 0;
+    min-height: 42px;
+    align-items: center;
+    gap: 8px;
+    padding: 0 11px;
+    border: 1px solid #dce7e9;
+    border-radius: 9px;
+    background: #fff;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+body.page-register .input-wrap:focus-within {
+    border-color: #36b4c0;
+    box-shadow: 0 0 0 3px rgba(25, 131, 150, .11);
+}
+
+body.page-register .input-wrap > i {
+    flex: 0 0 auto;
+    color: #38aebe;
+    font-size: 14px;
+}
+
+body.page-register .field-control {
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    padding: 4px 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #17262a;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+}
+
+body.page-register .field-control::placeholder {
+    color: #8a989c;
+}
+
+body.page-register .field-control:focus {
+    box-shadow: none;
+}
+
+body.page-register .input-wrap .field-control.has-toggle {
+    padding-right: 1px;
+}
+
+body.page-register .password-toggle {
+    flex: 0 0 auto;
+    padding: 4px;
+    border: 0;
+    background: transparent;
+    color: #38aebe;
+    font-size: 13px;
+}
+
+body.page-register .password-toggle:focus-visible {
+    outline: 2px solid #198396;
+    outline-offset: 2px;
+}
+
+body.page-register .student-id-field {
+    min-width: 0;
+    margin: 0;
+}
+
+body.page-register .student-id-field > .field-control[type="file"] {
+    display: block;
+    width: 100%;
+    min-height: 42px;
+    padding: 5px;
+    border: 1px solid #dce7e9;
+    border-radius: 9px;
+    background: #fff;
+    font-size: 10px;
+}
+
+body.page-register .student-id-help {
+    display: block;
+    margin-top: 4px;
+    color: #71858a;
+    font-size: 9px;
+    line-height: 1.35;
+}
+
+body.page-register .field-error {
+    margin: 4px 0 0;
+    color: #bb3d46;
+    font-size: 10px;
+}
+
+body.page-register .field-error:empty {
+    display: none;
+}
+
+body.page-register .provider-note {
+    margin: 8px 0 0;
+    color: #bb7434;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+body.page-register .field-error#provider_note {
+    margin: 8px 0 0;
+    color: #bb7434;
+}
+
+body.page-register .terms-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 13px 0;
+    color: #71858a;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+body.page-register .terms-row input {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+    margin: 1px 0 0;
+    accent-color: #198396;
+}
+
+body.page-register .terms-row a,
+body.page-register .login-link a {
+    color: #198396;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+body.page-register .terms-row a:hover,
+body.page-register .login-link a:hover {
+    color: #126575;
+    text-decoration: underline;
+}
+
+body.page-register .register-btn {
+    display: inline-flex;
+    width: 100%;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 9px;
+    background: #198396;
+    box-shadow: 0 7px 15px rgba(25, 131, 150, .18);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+body.page-register .register-btn:hover {
+    transform: translateY(-1px);
+    background: #126575;
+    box-shadow: 0 10px 20px rgba(25, 131, 150, .22);
+}
+
+body.page-register .login-link {
+    margin: 13px 0 0;
+    color: #71858a;
+    font-size: 10px;
+    text-align: center;
+}
+
+body.page-register .alert {
+    margin-bottom: 12px;
+    border-radius: 9px;
+    font-size: 12px;
+}
+
+@media (max-width: 850px) {
+    body.page-register {
+        padding: 16px;
+        background-attachment: scroll;
+    }
+
+    body.page-register .register-shell {
+        width: min(100%, 620px);
+        min-height: 0;
+        grid-template-columns: 1fr;
+    }
+
+    body.page-register .welcome-panel {
+        gap: 12px;
+        padding: 22px 26px;
+    }
+
+    body.page-register .welcome-copy {
+        margin: 0;
+        padding: 8px 0 0;
+    }
+
+    body.page-register .welcome-copy h1 {
+        font-size: 32px;
+    }
+
+    body.page-register .welcome-copy > p:not(.eyebrow) {
+        max-width: 500px;
+    }
+
+    body.page-register .benefits {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+    }
+
+    body.page-register .benefit {
+        align-items: flex-start;
+        font-size: 10px;
+    }
+
+    body.page-register .benefit i {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+    }
+
+    body.page-register .form-panel {
+        padding: 24px 28px;
+    }
+}
+
+@media (max-width: 520px) {
+    body.page-register {
+        padding: 12px;
+    }
+
+    body.page-register .register-shell {
+        border-radius: 18px;
+    }
+
+    body.page-register .welcome-panel {
+        padding: 18px 20px;
+    }
+
+    body.page-register .welcome-panel .logo {
+        font-size: 18px;
+    }
+
+    body.page-register .welcome-copy h1 {
+        font-size: 28px;
+    }
+
+    body.page-register .welcome-copy > p:not(.eyebrow) {
+        font-size: 12px;
+    }
+
+    body.page-register .benefits {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    body.page-register .form-panel {
+        padding: 21px 18px;
+    }
+
+    body.page-register .form-heading {
+        font-size: 22px;
+    }
+
+    body.page-register .field-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+@media (max-height: 760px) and (min-width: 851px) {
+    body.page-register {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    body.page-register .register-shell {
+        min-height: calc(100vh - 24px);
+    }
+
+    body.page-register .welcome-panel {
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+
+    body.page-register .welcome-copy {
+        padding: 16px 0;
+    }
+
+    body.page-register .benefits {
+        gap: 9px;
+        margin-top: 16px;
+    }
+
+    body.page-register .form-panel {
+        padding-top: 18px;
+        padding-bottom: 16px;
+    }
+
+    body.page-register .form-heading {
+        margin-bottom: 12px;
+        padding-bottom: 9px;
+    }
+
+    body.page-register .account-hint {
+        margin-top: 7px;
+        margin-bottom: 10px;
+    }
+
+    body.page-register .field-grid {
+        gap: 8px 12px;
+    }
+
+    body.page-register .terms-row {
+        margin-top: 9px;
+        margin-bottom: 9px;
+    }
+
+    body.page-register .login-link {
+        margin-top: 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.page-register *,
+    body.page-register *::before,
+    body.page-register *::after {
+        transition-duration: .01ms !important;
+    }
+}

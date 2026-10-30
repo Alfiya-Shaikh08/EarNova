@@ -1,0 +1,243 @@
+/* Shared desktop and mobile navigation styles used across public pages. */
+.navbar {
+    min-height: 75px;
+    padding: 8px 3.5%;
+    background: #ffffff;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+    color: #111111;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.navbar-brand:hover {
+    color: #111111;
+}
+
+.logo {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #198396;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    transition: transform 0.3s ease;
+}
+
+.brand-highlight {
+    color: #198396;
+}
+
+.navbar-nav {
+    gap: 28px;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    padding: 10px 0 !important;
+    color: #17252b;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #198396;
+}
+
+.navbar-nav .nav-link::after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    border-radius: 5px;
+    background: #198396;
+    content: "";
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    border: 1px solid #dce7e9;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(25, 131, 150, 0.15);
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-buttons > a.btn-outline-custom:not(.account-icon-link),
+.nav-buttons > a.btn-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 7px 20px;
+    border: 2px solid #198396;
+    border-radius: 11px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.nav-buttons > a.btn-outline-custom:not(.account-icon-link) {
+    min-width: 96px;
+    background: #ffffff;
+    color: #198396;
+}
+
+.nav-buttons > a.btn-outline-custom:not(.account-icon-link):hover {
+    background: #eff9fa;
+    color: #126575;
+}
+
+.nav-buttons > a.btn-custom {
+    min-width: 112px;
+    background: #198396;
+    color: #ffffff;
+}
+
+.nav-buttons > a.btn-custom:hover {
+    border-color: #126575;
+    background: #126575;
+    color: #ffffff;
+}
+
+.btn-primary-custom,
+.btn-outline-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: 2px solid #198396;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom {
+    background: #198396;
+    color: #ffffff;
+}
+
+.btn-primary-custom:hover {
+    border-color: #126575;
+    background: #126575;
+    color: #ffffff;
+}
+
+.btn-outline-custom {
+    background: #ffffff;
+    color: #198396;
+}
+
+.btn-outline-custom:hover {
+    background: #eff9fa;
+    color: #126575;
+}
+
+.account-icon-link {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 12px;
+}
+
+.account-icon-link svg {
+    width: 21px;
+    height: 21px;
+    fill: currentColor;
+}
+
+@media (max-width: 1199px) {
+    .navbar {
+        padding: 8px 2.5%;
+    }
+
+    .navbar-nav {
+        gap: 18px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+
+    .navbar-brand {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        min-height: 65px;
+        padding: 8px 4%;
+    }
+
+    .navbar-collapse {
+        padding-top: 12px;
+    }
+
+    .navbar-nav {
+        gap: 2px;
+    }
+
+    .navbar-nav .nav-link {
+        display: inline-block;
+        font-size: 15px;
+    }
+
+    .nav-buttons {
+        padding: 12px 0 5px;
+    }
+}
+
+@media (max-width: 575px) {
+    .nav-buttons > a.btn-outline-custom:not(.account-icon-link),
+    .nav-buttons > a.btn-custom {
+        min-width: 0;
+        min-height: 40px;
+        padding: 6px 14px;
+        border-radius: 10px;
+        font-size: 13px;
+    }
+
+    .navbar-brand {
+        gap: 8px;
+        font-size: 23px;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+        border-radius: 13px;
+        font-size: 17px;
+    }
+}
